@@ -24,7 +24,7 @@ Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulatin
 
 
 # 2. Installation #
-pip install git+https://github.com/SOQCSADmin/QoptKIT"
+pip install git+https://github.com/SOQCSADmin/QoptKIT
 
 This library has various C++ files that have to be compiled. It is necedary to have installed a C++ compiler and the tools Make and ar.  These are standard tools avaiable
 for any Linux distribution. Use you preferred package installer to have them available in your system. QoptKit also require the C++ library [Eigen 3] to be installed in your system.
@@ -34,7 +34,7 @@ Python libraries qiskit, matplotlib and numpy are required but they will be inst
 
 
 # 3 Documentation
-The documentation and guide of use will be found as part of the documentation in the documentation folder. Unzip the doc.zip file and execute the unpack.sh script.
+The documentation can be found in https://soqcsadmin.github.io/QoptKIT/
 
 # 4. Authorship #
 <b>Javier Osca</b> <br>
