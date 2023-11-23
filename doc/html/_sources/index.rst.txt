@@ -1,0 +1,12 @@
+QoptKIT V1.0 documentation.
+==================================
+
+   
+.. toctree::
+   :maxdepth: 2
+      
+   Installation <install>
+   Quantum Photonics Introduction <photonic>
+   Photonic Circuits in Qiskit <qiskit>
+   API <api>
+   Licence and copyright <licence>
