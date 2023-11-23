@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "qoptkit"
+version = "1.0"
+maintainers = [
+  { name="SOQCSADmin", email="SOQCSAdmin@google.com" },
+]
+authors = [
+  { name="Javier Osca", email="javier.oscacotarelo@mu.ie" },
+  { name="Jiri Vala", email="jiri.vala@mu.ie" },
+]
+description = "Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulating and compiling ideal optical circuis"
+readme = "README.md"
+
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Apache 2.0 ",
+    "Operating System :: Linux :: MacOSX",
+]
+
+dependencies = [
+  'numpy>=1.20.3',
+  'matplotlib>=3.5.1'
+]
+
+[project.optional-dependencies]
+    qiskit = [ 'qiskit >= 0.37.2']
+
+[project.urls]
+Homepage = "https://github.com/SOQCSADmin/QoptKIT"
+
+
+
+
