@@ -24,25 +24,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from ctypes import cdll,c_char,c_int,c_long,c_double,POINTER
-
-try:
-    from qiskit import QuantumCircuit, transpile  
-    from qiskit.extensions import UnitaryGate
-    has_qiskit = True
-except ImportError:
-    has_qiskit = False
-
-
-
+from qiskit import QuantumCircuit, transpile  
+from qiskit.extensions import UnitaryGate
 
 
 #------------------------------------------------------------------------------#      
 # CPP library configuration
-#---------------------------------------------------------------------------   #      
+#------------------------------------------------------------------------------#      
 cpplib='libqoptkit.so'
 
 #------------------------------------------------------------------------------#      
-# Open QOPTKIT C++ interface                                                     #
+# Open QOPTKIT C++ interface                                                   #
 #------------------------------------------------------------------------------#      
 qoptkit = cdll.LoadLibrary(os.path.dirname(__file__) + '/' + cpplib)
 
@@ -461,7 +453,7 @@ class gcircuit(object):
 class qocircuit(object):
     """
 
-    A quantum circuit consists in a set of individual quantum optical elements connected between them.
+    A quantum circuit consists in a set of interconnected quantum optical elements.
 
     :nch (int): Number of channels
     :dummy(automatic(bool)): If True it creates a dummy empty class. (Option used internally by the library).
@@ -627,7 +619,7 @@ class state(object):
     Quantum photonic state definition. A quantum state is a sum of kets multiplied by amplitudes.
 
     :level (int): Number of channels to describe the state.
-    :st(optional(list[[complex,list[int]]]): List of kets described as a 2.tuple of a comlpex number representing the amplitude an a list of occupations by channel.
+    :st(optional(list[[complex,list[int]]]): List of kets described as a 2.tuple of a comlpex number representing the amplitude and a list of occupations by channel.
     :nph(optional(int)): Maximum number of photons of the state.
     :maxket(optional(int)): Maximum number of kets. (Internal memory).
     :dummy(automatic(bool)): If True it creates a dummy empty class. (Option used internally by the library).
@@ -699,8 +691,7 @@ class state(object):
         Adds a new ket to the state using a vector with the level occupation.
          
         :ampl(complex):  Amplitude of the new ket.
-        :vel(list[int]): List with the occupation of each channel in the new ket.
-        :qoc(qocircuit): Circuit to which the term is related.
+        :vec(list[int]): List with the occupation of each channel in the new ket.
         
         """  
         length=len(vec)
@@ -741,14 +732,14 @@ class state(object):
     #---------------------------------------------------------------------------      
     # Encode a state into qubit encoding. (Path encoding)
     # Those kets that can not be encoded are ignored and the result is normalized
-    # WARNING: It is responsability of the library user to make sure that no ket
+    # WARNING: It is responsibility of the library user to make sure that no ket
     # repetitions arise after encoding.
     #---------------------------------------------------------------------------      
     def encode(self, qmap,  qoc):
         """
         Encode a state into a qubit encoding. Those kets that can not be encoded are dismissed and the result is normalized. |br|
     
-        **Warning!** t is responsability of the library user to make sure that no ket repetitions arise after encoding.
+        **Warning!** t is responsibility of the library user to make sure that no ket repetitions arise after encoding.
 
 
         :qmap(list[][]): nx2 matrix with the qubit definitions. Each row has two entries specifying the channels that define the qubit.
@@ -877,7 +868,7 @@ class state(object):
         Returns the tag of the ket required.
     
         :index (int):  Index of a ket.
-        :return (int): Occupation in string format.
+        :return (string): Occupation in string format.
         
         """
         nlevel=self.num_ch()
@@ -900,7 +891,7 @@ class state(object):
         
         Return state as a list of 2-tuples of amplitudes and occupations.
     
-        :return (list[[complex,[int]]): List of 2-tuples of a ket amplitude an a list of occupations by channel.
+        :return (list[[complex,[int]]): List of 2-tuples of a ket amplitude and a list of occupations by channel.
         
         """        
         nkets=self.nkets()
@@ -920,7 +911,7 @@ class state(object):
         
             Plots the outcomes in a bar diagram.
         
-            :pmax(optional[float]): Maxymum value of the probabiilty.
+            :pmax(optional[float]): Maximum value of the probabiilty.
             :sizex(optional[float]): Size of the plot in the x direction in inches.
             :sizey(optional[float]): Size of the plot in the y direction in inches.
             :dpi(optional[float]): Density of points  by inch.
@@ -1143,7 +1134,7 @@ class compiler(object):
         :psel(list[int]): Post-selection condition of the circuit as a list of occupations by channel. Negative occupation means no post-selection for that channel.
         :basis(list): List of the allowed gates for transpilation.
         :qoc(qocircuit): Circuit to be assembled
-        :measure(optional[string]): We measure following QOPTKIT or QISKIT protocols. 
+        :measure(optional[string]): We measure following "qoptkit" or "qiskit" protocols. 
                                     In qoptkit the smaller qubit (qubit 0) appear at the left  when defining the outcomes while in QISKIT is the other way around.
         :return circ(QuantumCircuit): Returns the full assembled circuit.
         
@@ -1198,7 +1189,7 @@ class compiler(object):
                                                                     * A matrix with the qubit-channel encoding. |br|
                                                                     * A list of the ancilla channels. |br|
                                                                     * A list with the post-selection condition. |br|
-                                                                    * A transpiled QuantumCircuit with rotations and controled phase flips as gates.|br|
+                                                                    * A transpiled QuantumCircuit with rotations and controled phase flips as gates. |br|
         
         """
         # Transpile the circuit to gates implementable in optical circuits

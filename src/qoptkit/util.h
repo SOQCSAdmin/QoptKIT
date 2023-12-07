@@ -32,7 +32,7 @@
 #include <string>        // Strings management
 #include <algorithm>     // Permutations
 #include <unordered_map> // Hash tables
-#include <eigen3/Eigen/Dense>   // Eigen3 library
+#include <Eigen/Dense>   // Eigen3 library
 
 // Name spaces
 using namespace std;

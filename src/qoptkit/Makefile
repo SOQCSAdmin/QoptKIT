@@ -3,14 +3,13 @@
 # %---------------------------------%
 
 GPP = $(CXX)
-FLAGS= -O2 -Wall -pedantic       
+FLAGS= -O2 -Wall -pedantic -I /usr/include/eigen3/   
 UNAME := $(shell uname -s)
 ifeq ($(UNAME),Linux)
 	FLAGS += -std=c++17 -fopenmp -fPIC
 endif
 ifeq ($(UNAME),Darwin)
-	arch := $(shell uname -p)
-        FLAGS += -std=c++1z -arch $(arch)
+        FLAGS += -std=c++1z 
 endif
 
 #  %--------------------------------%
