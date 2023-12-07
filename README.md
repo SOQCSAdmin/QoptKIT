@@ -1,44 +1,43 @@
 # Quantum Optical KIT for QISKIT (QoptKIT) 
-** Work in progress. Under testing. **
 
-Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulating and compiling ideal optical circuis. Optical circuits are defined from its ideal components connected between them. The library also provides support to establish post-selection conditions on the circuit. The aim of this library is to provide a first introduction to quantum optical technologies to QISKIT users.
+<p align="justify" >Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulating and compiling quantum optical circuits. Optical circuits are defined by interconnected ideal components. The library also provides support to establish comditions for post-selection which is required in optical circuits. The aim of this library is to introduce quantum optical technologies to QISKIT users.</p>
 
 **QoptKIT capabilities**:
-- Create an ideal circuit made of phase shifters and beamsplitters
-- Create a simulator to run it
+
+- Create a circuit made of phase shifters and beamsplitters
+- Create a simulator 
 - Run the simulation
-- Translate a QoKITt outcome into qubit encoding.
+- Translate a QoptKIT outcome into qubit encoding.
 - Print the output statistics. 
 
  
 # 1. Requirements #
 
-* Linux or MaxOsX operating system
+* Linux or MacOsX operating system
 * C++ Compiler
 * GNU Make
 * [Eigen 3](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 * Python3
 * qiskit
-* matplotlib
-* numpy
 
 
 # 2. Installation #
 pip install git+https://github.com/SOQCSADmin/QoptKIT
 
-This library has various C++ files that have to be compiled. It is necedary to have installed a C++ compiler and the tools Make and ar.  These are standard tools avaiable
-for any Linux distribution. Use you preferred package installer to have them available in your system. QoptKit also require the C++ library [Eigen 3] to be installed in your system.
-This library is also available in most of the Linux distributions.
+<p align="justify">This library has various C++ files that have to be compiled. It is necessary to have installed a C++ compiler and the tools make and ar.  These are standard tools avaiable
+for any Linux distribution. Use you preferred package installer to have them available in your system. QoptKit also require the C++ library Eigen 3 to be installed in your system.
+This library is also available in most of the Linux distributions.</p>
 
-Python libraries qiskit, matplotlib and numpy are required but they will be installed acutomatically. We recommend the use of conda but its not required.
-
+<p align="justify">
+Python libraries qiskit, matplotlib and numpy are required but they will be installed acutomatically. We recommend the use of conda but it is not required.
+</p>
 
 # 3 Documentation
 The documentation can be found in https://soqcsadmin.github.io/QoptKIT/
 
 # 4. Authorship #
 <b>Javier Osca</b> <br>
-javier.oscacotarelo@mu.ie
+soqcslib@gmail.com
 
 <b>Jiri Vala</b> <br>
 jiri.vala@mu.ie
