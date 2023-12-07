@@ -1,0 +1,11 @@
+License and copyright
+=====================
+
+Copyright (c) 2023 National University of Ireland Maynooth, Maynooth University. 
+
+Licensed under the Apache License, Version 2.0 (the "License"); |br|
+You may not use this file except in compliance with the  :download:`LICENSE.TXT <../assets/LICENSE.TXT>`.
+
+.. |br| raw:: html
+
+     <br>
