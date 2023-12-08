@@ -29,7 +29,7 @@ for any Linux distribution. Use you preferred package installer to have them ava
 This library is also available in most of the Linux distributions.</p>
 
 <p align="justify">
-Python libraries qiskit, matplotlib and numpy are required but they will be installed acutomatically. We recommend the use of conda but it is not required.
+Python libraries qiskit, matplotlib and numpy are required but they will be installed automatically. We recommend the use of conda but it is not required.
 </p>
 
 # 3 Documentation
