@@ -1,6 +1,6 @@
 # Quantum Optical KIT for QISKIT (QoptKIT) 
 
-<p align="justify" >Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulating and compiling quantum optical circuits. Optical circuits are defined by interconnected ideal components. The library also provides support to establish comditions for post-selection which is required in optical circuits. The aim of this library is to introduce quantum optical technologies to QISKIT users.</p>
+<p align="justify" >Quantum Optical KIT (QoptKit) library adds to QISKIT the capability of simulating and compiling quantum optical circuits. Optical circuits are defined by interconnected ideal components. The library also provides support to establish conditions for post-selection which is required in optical circuits. The aim of this library is to introduce quantum optical technologies to QISKIT users.</p>
 
 **QoptKIT capabilities**:
 
