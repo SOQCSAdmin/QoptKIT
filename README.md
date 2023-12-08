@@ -25,7 +25,7 @@
 pip install git+https://github.com/SOQCSADmin/QoptKIT
 
 <p align="justify">This library has various C++ files that have to be compiled. It is necessary to have installed a C++ compiler and the tools make and ar.  These are standard tools available
-for any Linux distribution. Use you preferred package installer to have them available in your system. QoptKit also require the C++ library Eigen 3 to be installed in your system.
+for any Linux distribution. Use you preferred package installer to have them available in your system. QoptKit also requires the C++ library Eigen 3 to be installed in your system.
 This library is also available in most of the Linux distributions.</p>
 
 <p align="justify">
